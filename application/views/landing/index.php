@@ -278,8 +278,8 @@
 						<div class="cta-btn">
 							<a href="<?=base_url();?>auth/post_register" class="btn btn-theme btn-lg">Register <i class="fa fa-angle-right"></i></a>
 						</div>
-					</div>	
-				</div>
+					</div>	<br><br><br><br><br><br><br>
+				</div> <br><br><br>
 			</div>
 		</section>
 	<?php } ?>
