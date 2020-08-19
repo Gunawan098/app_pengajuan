@@ -70,16 +70,15 @@ class Auth extends CI_Controller {
 
     public function post_register()
     { 
-        $this->form_validation->set_rules('nama', 'Nama Lengkap', 'required');
-        $this->form_validation->set_rules('no_tlp', 'No. HP', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required');
-        $this->form_validation->set_rules('no_nik', 'No. NIK', 'required');
-        // $this->form_validation->set_rules('no_kk', 'No. KK', 'required');
-        // $this->form_validation->set_rules('nama_kepala', 'Nama Kepala Keluarga', 'required');
-        $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('nama', 'Nama Lengkap', 'required|alpha');
+        $this->form_validation->set_rules('no_tlp', 'No. HP', 'required|numeric');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+        $this->form_validation->set_rules('no_nik', 'No. NIK', 'required|numeric');
+        $this->form_validation->set_rules('no_kk', 'No. KK', 'numeric');
+        $this->form_validation->set_rules('nama_kepala', 'Nama Kepala Keluarga', 'alpha');
+        $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
  
         $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
-        $this->form_validation->set_message('required', 'Enter %s');
  
         if ($this->form_validation->run() === FALSE)
         {  
@@ -98,7 +97,11 @@ class Auth extends CI_Controller {
             
             //$pengecekannik = $this->Auth_model->pengecekan_register($data['no_nik'],$data['no_kk'],$data['no_tlp'],$data['email']);
             $pengecekannik = $this->db->get_where('t_user', array('no_nik' => $data['no_nik']))->num_rows();
-            $pengecekankk = $this->db->get_where('t_user', array('no_kk' => $data['no_kk']))->num_rows();
+            if($data['no_kk'] != ''){
+                $pengecekankk = $this->db->get_where('t_user', array('no_kk' => $data['no_kk']))->num_rows();
+            }else{
+                $pengecekankk = 0;
+            }
             $pengecekantlp = $this->db->get_where('t_user', array('no_tlp' => $data['no_tlp']))->num_rows();
             $pengecekanemail = $this->db->get_where('t_user', array('email' => $data['email']))->num_rows();
 

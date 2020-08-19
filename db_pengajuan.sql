@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Jul 2020 pada 11.18
+-- Waktu pembuatan: 19 Agu 2020 pada 12.35
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 5.6.40
 
@@ -89,8 +89,8 @@ CREATE TABLE `t_pengajuan` (
 CREATE TABLE `t_user` (
   `id_user` int(11) NOT NULL,
   `type_login` enum('user','admin') NOT NULL,
-  `no_nik` varchar(16) NOT NULL,
-  `no_kk` int(16) NOT NULL,
+  `no_nik` int(16) NOT NULL,
+  `no_kk` varchar(16) NOT NULL,
   `password` varchar(255) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `no_tlp` int(13) NOT NULL,
@@ -110,8 +110,7 @@ CREATE TABLE `t_user` (
 --
 
 INSERT INTO `t_user` (`id_user`, `type_login`, `no_nik`, `no_kk`, `password`, `nama`, `no_tlp`, `email`, `j_k`, `tgl_lahir`, `alamat`, `nama_kepala`, `alamat_kk`, `foto`, `ktp_kk`, `verifikasi`) VALUES
-(1, 'admin', '1234567891', 1234567891, '21232f297a57a5a743894a0e4a801fc3', 'admin', 80808080, 'admin@gmail.com', 'laki-laki', '2020-06-21', '-', '-', '-', '-', '-', 'sudah verifikasi'),
-(2, 'user', '1234', 0, '098f6bcd4621d373cade4e832627b4f6', 'test', 123, 'test@gmail.com', 'laki-laki', '1970-01-01', 'asd', '', '', 'sunset.jpg', 'night_-_Copy_-_Copy.jpg', 'sudah verifikasi');
+(1, 'admin', 2147483647, '1234567891', '21232f297a57a5a743894a0e4a801fc3', 'admin', 80808080, 'admin@gmail.com', 'laki-laki', '2020-06-21', '-', '-', '-', '-', '-', 'sudah verifikasi');
 
 --
 -- Indexes for dumped tables
@@ -153,13 +152,13 @@ ALTER TABLE `t_pelayanan`
 -- AUTO_INCREMENT untuk tabel `t_pengajuan`
 --
 ALTER TABLE `t_pengajuan`
-  MODIFY `id_pengajuan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `t_user`
 --
 ALTER TABLE `t_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

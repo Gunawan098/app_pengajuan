@@ -45,15 +45,15 @@
 								<div class="col-lg-6">
             					<aside class="left-sidebar">
 									<div class="form-group"><label>Nama Pemohon</label>
-									<input type="text" class="form-control" name="nama" placeholder="*Masukkan Nama Anda" value="<?=$user->nama;?>" readonly></div>
+									<input type="text" class="form-control" name="nama" placeholder="*Masukkan Nama Anda" value="<?=$user->nama;?>"></div>
                                     <?php echo form_error('nama'); ?> 
 
 									<div class="form-group"><label>No. HP</label>
-									<input type="text" class="form-control" name="no_tlp" placeholder="nomor hp" value="<?=$user->no_tlp;?>" readonly></div>
+									<input type="text" class="form-control" name="no_tlp" placeholder="nomor hp" value="<?=$user->no_tlp;?>"></div>
                                     <?php echo form_error('no_tlp'); ?> 
 
 									<div class="form-group"><label>Email</label>
-									<input type="email" class="form-control" name="email"  value="<?=$user->email;?>" readonly></div>	
+									<input type="email" class="form-control" name="email"  value="<?=$user->email;?>"></div>	
                                     <?php echo form_error('email'); ?> 
 
 									<div class="form-group"><label>Jenis Kelamin</label>

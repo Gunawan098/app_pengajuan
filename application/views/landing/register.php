@@ -40,44 +40,44 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="nama" id="nama" class="form-control input-lg" placeholder="Nama Lengkap" tabindex="1">
-                                    <?php echo form_error('nama'); ?> 
+                                    <input type="text" name="nama" id="nama" class="form-control input-lg" placeholder="Nama Lengkap" tabindex="1" value="<?php if(isset($_POST['nama']))   {echo $_POST['nama'];} ?>">
+                                    <?php echo form_error('nama', '<div class="alert alert-danger" role="alert">', '</div>');?>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="no_kk" id="no_kk" class="form-control input-lg" placeholder="No. KK" tabindex="6">
-                                    <?php echo form_error('no_kk'); ?> 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-6">
-                                <div class="form-group">
-                                    <input type="text" name="no_tlp" id="no_tlp" class="form-control input-lg" placeholder="No. HP" tabindex="2">
-                                    <?php echo form_error('no_tlp'); ?> 
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-6">
-                                <div class="form-group">
-                                    <input type="text" name="nama_kepala" id="nama_kepala" class="form-control input-lg" placeholder="Nama Kepala Keluarga" tabindex="7">
-                                    <?php echo form_error('nama_kepala'); ?> 
+                                    <input type="text" name="no_kk" id="no_kk" class="form-control input-lg" placeholder="No. KK" tabindex="6" value="<?php if(isset($_POST['no_kk']))   {echo $_POST['no_kk'];} ?>">
+                                    <?php echo form_error('no_kk', '<div class="alert alert-danger" role="alert">', '</div>');?>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email" tabindex="3">
-                                    <?php echo form_error('email'); ?> 
+                                    <input type="text" name="no_tlp" id="no_tlp" class="form-control input-lg" placeholder="No. HP" tabindex="2" value="<?php if(isset($_POST['no_tlp']))   {echo $_POST['no_tlp'];} ?>">
+                                    <?php echo form_error('no_tlp', '<div class="alert alert-danger" role="alert">', '</div>');?>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="nama_kepala" id="nama_kepala" class="form-control input-lg" placeholder="Nama Kepala Keluarga" tabindex="7" value="<?php if(isset($_POST['nama_kepala']))   {echo $_POST['nama_kepala'];} ?>">
+                                    <?php echo form_error('nama_kepala', '<div class="alert alert-danger" role="alert">', '</div>');?>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="no_nik" id="no_nik" class="form-control input-lg" placeholder="No. NIK" tabindex="4">
-                                    <?php echo form_error('no_nik'); ?> 
+                                    <input type="text" name="email" id="email" class="form-control input-lg" placeholder="Email" tabindex="3" value="<?php if(isset($_POST['email']))   {echo $_POST['email'];} ?>">
+                                    <?php echo form_error('email', '<div class="alert alert-danger" role="alert">', '</div>');?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="no_nik" id="no_nik" class="form-control input-lg" placeholder="No. NIK" tabindex="4" value="<?php if(isset($_POST['no_nik']))   {echo $_POST['no_nik'];} ?>">
+                                    <?php echo form_error('no_nik', '<div class="alert alert-danger" role="alert">', '</div>');?>
                                 </div>
                             </div>
                         </div>
@@ -85,7 +85,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
-                                    <?php echo form_error('password'); ?> 
+                                    <?php echo form_error('password', '<div class="alert alert-danger" role="alert">', '</div>');?>
                                 </div>
                             </div>
                         </div>

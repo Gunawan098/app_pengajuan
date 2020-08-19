@@ -645,14 +645,20 @@ class Master extends CI_Controller {
         if($data->id_pelayanan==1){
             $title = 'Pendaftaran Permohonan KK';
             $dataa = 'KK-'.$data->no_pengajuan;
+            $tgl = date('Y-m-d',strtotime($data->create_date));
+            $tgl_pengambilan = date('Y-m-d', strtotime('+14 days', strtotime($tgl)));
         }
         if($data->id_pelayanan==2){
             $title = 'Pendaftaran E-KTP Baru';
             $dataa = 'EKTP-'.$data->no_pengajuan;
+            $tgl = date('Y-m-d',strtotime($data->create_date));
+            $tgl_pengambilan = date('Y-m-d', strtotime('+5 days', strtotime($tgl)));
         }
         if($data->id_pelayanan==3){
             $title = 'Pendaftaran Surat Pindah Keluar';
             $dataa = 'SPK-'.$data->no_pengajuan;
+            $tgl = date('Y-m-d',strtotime($data->create_date));
+            $tgl_pengambilan = date('Y-m-d', strtotime('+5 days', strtotime($tgl)));
         }
 
 
@@ -674,17 +680,18 @@ class Master extends CI_Controller {
 
         $pdf->Cell(0,5,'Hallo '.$data->nama_pemohon,0,1);
         $pdf->Cell(0,5,'Anda telah berhasil melakukan '.$title.' secara online',0,1);
-        $pdf->Cell(190,7,'pada tanggal '.date('Y-m-d',strtotime($data->create_date)),0,1);
-        $pdf->Cell(190,7,'Berikut data singkat permohonan anda.',0,1);
-        $pdf->Cell(190,7,'Nomor pendaftaran    : '.$dataa,0,1);
-        $pdf->Cell(190,7,'Nama                           : '.$data->nama_pemohon,0,1);
-        $pdf->Cell(190,7,'Alamat                         : '.$data->alamat,0,1);
+        $pdf->Cell(190,7,'pada tanggal '.date('Y-m-d',strtotime($data->create_date)).'.  Berikut data singkat permohonan anda : ',0,1);
+        // $pdf->Cell(190,7,'Berikut data singkat permohonan anda.',0,1);
+        $pdf->Cell(190,7,'Nomor pendaftaran              : '.$dataa,0,1);
+        $pdf->Cell(190,7,'Nama                                      : '.$data->nama_pemohon,0,1);
+        $pdf->Cell(190,7,'Alamat                                    : '.$data->alamat,0,1);
+        $pdf->Cell(190,7,'Tanggal Pengambilan           : '.$tgl_pengambilan,0,1);
 
 
         $pdf->Cell(0,5,'',0,1);
 
 
-        $pdf->Cell(190,7,'lakukan pengurusan pengajuan pada saat jam operasional di hari Senin - Jumat',0,1);
+        $pdf->Cell(160,7,'lakukan pengurusan pengajuan pada saat jam operasional di hari Senin - Jumat',0,1);
         $pdf->Cell(190,7,'Pukul 08.00 WIB s/d 15.00 WIB',0,1);
 
 
