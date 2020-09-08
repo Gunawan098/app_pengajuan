@@ -59,7 +59,7 @@ class Auth extends CI_Controller {
                  'status' => 'login'
                 );
   
-            $this->session->set_userdata($user);
+             $this->session->set_userdata($user);
  
              redirect( base_url('pengajuan-pembuatan-KK') ); 
             }
